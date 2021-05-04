@@ -4,6 +4,7 @@ import './index.css';
 import { Provider } from "react-redux";
 import App from './App';
 import { Store } from "./app/store";
+import 'tachyons';
 
 // using Provider to provide our Redux store to all wrapped Components
 ReactDOM.render(

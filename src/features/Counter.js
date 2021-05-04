@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-
 import { useDispatch, useSelector } from "react-redux";
 import {
     increment,
@@ -20,16 +19,18 @@ const Counter = () => {
 
     return (
         <>
-            <header class="tc pv4 pv5-ns">
-                <h1 className="f5 f4-ns fw6 black-70">Redux Door Counter</h1>
-            </header>
-            <h2 class="f6 black-70 fw2 ttu tracked">Count: {count}</h2>
-            <button onClick={() => dispatch(increment())}>➕</button>
-            <button onClick={() => dispatch(decrement())}>➖</button>
-            <button onClick={() => dispatch(incrementByAmount(value))}>
-                Change by Value ⇧
-      </button>
-            <input onChange={(e) => handleChange(e)} />
+            <h1 className='appName'>Redux Door Counter</h1>
+            <h2 class="count">Count: {count}</h2>
+            <button className='counterBtn' onClick={() => dispatch(increment())}>➕</button>
+            <button className='counterBtn' onClick={() => dispatch(decrement())}>➖</button>
+            
+            <div>
+                <button onClick={() => dispatch(incrementByAmount(value))}>
+                    Change by Value ⇧
+                </button>
+                <input onChange={(e) => handleChange(e)} />
+
+            </div>
         </>
     );
 };
