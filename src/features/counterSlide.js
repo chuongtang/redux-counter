@@ -20,9 +20,12 @@ const Slice = createSlice({
     incrementByAmount(state, action) {
       state.value += action.payload
     },
+    decrementByAmount(state, action) {
+      state.value -= action.payload
+    },
   },
 })
 
 export  const selectCount = (state) => state.counter.value;
-export const { increment, decrement, incrementByAmount } = Slice.actions
+export const { increment, decrement, incrementByAmount, decrementByAmount } = Slice.actions
 export default Slice.reducer

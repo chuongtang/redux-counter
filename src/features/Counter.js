@@ -4,6 +4,7 @@ import {
     increment,
     decrement,
     incrementByAmount,
+    decrementByAmount,
     selectCount
 } from "./counterSlide.js";
 
@@ -26,10 +27,15 @@ const Counter = () => {
             
             <div>
                 <button onClick={() => dispatch(incrementByAmount(value))}>
-                    Change by Value ⇧
+                    ⟰ INCREASE by 
                 </button>
                 <input onChange={(e) => handleChange(e)} />
-
+            </div>
+            <div>
+                <button onClick={() => dispatch(decrementByAmount(value))}>
+                    ⤋ DECREASE by
+                </button>
+                <input onChange={(e) => handleChange(e)} />
             </div>
         </>
     );
