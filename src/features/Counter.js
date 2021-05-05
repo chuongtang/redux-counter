@@ -11,7 +11,7 @@ import {
 const Counter = () => {
     const count = useSelector(selectCount);
     const dispatch = useDispatch();
-    const [value, setValue] = useState();
+    const [value, setValue] = useState(1);
 
     const handleChange = (e) => {
         const num = parseInt(e.target.value);
@@ -25,17 +25,17 @@ const Counter = () => {
             <button className='counterBtn' onClick={() => dispatch(increment())}>➕</button>
             <button className='counterBtn' onClick={() => dispatch(decrement())}>➖</button>
             
-            <div>
-                <button onClick={() => dispatch(incrementByAmount(value))}>
+            <div className='box-btn' >
+                <button className="btn-plus btn" onClick={() => dispatch(incrementByAmount(value))}>
                     ⟰ INCREASE by 
                 </button>
-                <input onChange={(e) => handleChange(e)} />
+                <input className='inputBox' onChange={(e) => handleChange(e)} />
             </div>
-            <div>
-                <button onClick={() => dispatch(decrementByAmount(value))}>
+            <div className='box-btn'>
+                <button className="btn-minus btn" onClick={() => dispatch(decrementByAmount(value))}>
                     ⤋ DECREASE by
                 </button>
-                <input onChange={(e) => handleChange(e)} />
+                <input className='inputBox' onChange={(e) => handleChange(e)} />
             </div>
         </>
     );

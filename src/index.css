@@ -94,4 +94,34 @@ h5{
   50% { background-position: 400% 0; }
   100% { background-position: 0 0; }
 }
+.inputBox{
+  max-width: 2em;
+}
 
+.box-btn{
+  padding: 20px;
+  margin: auto;
+}
+.btn {
+  width: 10rem;
+  height: 3rem;
+  border-radius: 50px;
+  background: linear-gradient(225deg, #ffffff, #e6e6e6);
+  box-shadow:  -36px 36px 72px #c2c2c2,
+              36px -36px 72px #ffffff;
+}
+
+.btn:hover {
+  transition: 1s ease-in-out;
+  background: #4F95DA;
+}
+
+.btn:hover svg {
+  stroke-dashoffset: -480;
+}
+
+.btn span {
+  color: white;
+  font-size: 18px;
+  font-weight: 100;
+}
