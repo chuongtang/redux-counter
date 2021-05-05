@@ -6,7 +6,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #eaf2fc;
+  background-size: cover;
+  
 }
 
 code {
@@ -17,10 +18,12 @@ h5{
   position: fixed;
   top: 10px;
   left: 15px;
+  
 }
 .App{
-  margin-top: 20%;
+  margin-top: 10%;
   margin-left: 15%;
+  color: whitesmoke;
   text-align: center;
   border-radius: 20px;
   box-shadow:  -22px -22px 44px #fff3f3,
@@ -96,32 +99,28 @@ h5{
 }
 .inputBox{
   max-width: 2em;
+  font-size: large;
+  height: 2rem;
+  border-radius: 10px;
+  text-align: center;
 }
 
 .box-btn{
   padding: 20px;
   margin: auto;
+  width: fit-content;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
 .btn {
   width: 10rem;
   height: 3rem;
-  border-radius: 50px;
-  background: linear-gradient(225deg, #ffffff, #e6e6e6);
-  box-shadow:  -36px 36px 72px #c2c2c2,
-              36px -36px 72px #ffffff;
+  border-radius: 10px;
+  margin-right: 5px;
 }
 
 .btn:hover {
   transition: 1s ease-in-out;
-  background: #4F95DA;
-}
-
-.btn:hover svg {
-  stroke-dashoffset: -480;
-}
-
-.btn span {
+  background: #e0875d;
   color: white;
-  font-size: 18px;
-  font-weight: 100;
 }

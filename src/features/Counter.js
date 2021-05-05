@@ -37,6 +37,7 @@ const Counter = () => {
                 </button>
                 <input className='inputBox' onChange={(e) => handleChange(e)} />
             </div>
+            
         </>
     );
 };
