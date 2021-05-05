@@ -1,11 +1,12 @@
 
-// import './App.css';
+import Particles from 'react-particles-js';
 import Counter from './features/Counter';
 
 function App() {
   return (
     <div className="App">
-      <Counter />
+    <Counter />
+      <Particles />
     </div>
   );
 }
