@@ -20,7 +20,7 @@ const Counter = () => {
 
     return (
         <>
-            <h1 className='appName'>Redux Door Counter</h1>
+            <h1 className='appName'>React Door Counter</h1>
             <h2 class="count">Count: {count}</h2>
             <div className='nameBox'>
                 <input placeholder='Enter store name to retrieve previous count' className='inputName' onChange={(e) => handleChange(e)} />
@@ -35,13 +35,13 @@ const Counter = () => {
                 <button className="btn-plus btn" onClick={() => dispatch(incrementByAmount(value))}>
                     ⟰ INCREASE by 
                 </button>
-                <input className='inputBox' onChange={(e) => handleChange(e)} />
+                <input placeholder='#' className='inputBox' onChange={(e) => handleChange(e)} />
             </div>
             <div className='box-btn'>
                 <button className="btn-minus btn" onClick={() => dispatch(decrementByAmount(value))}>
-                    ⤋ DECREASE by
+                    ⟱ DECREASE by
                 </button>
-                <input className='inputBox' onChange={(e) => handleChange(e)} />
+                <input placeholder='#' className='inputBox' onChange={(e) => handleChange(e)} />
             </div>
             
         </>
