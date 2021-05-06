@@ -1,5 +1,5 @@
 //import Store model
-import Store from '../schema/storeSchema'
+const Store = require('../schema/storeSchema');
 
 
 //GET '/Store'

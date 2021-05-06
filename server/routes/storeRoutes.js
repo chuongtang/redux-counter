@@ -1,4 +1,4 @@
-import express from 'express';
+const express = require('express'); 
 
 // Create an express router object to set up our routes
 const router  = express.Router(); 
