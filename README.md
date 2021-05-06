@@ -12,3 +12,5 @@ https://redux-toolkit.js.org/introduction/getting-started
 
 ## Styling
 * All stylings are in index.css: this is a good sandbox for me to practice applying pure CSS with React components
+
+## Great build from backend to FE react
