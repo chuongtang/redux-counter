@@ -22,6 +22,12 @@ const Counter = () => {
         <>
             <h1 className='appName'>Redux Door Counter</h1>
             <h2 class="count">Count: {count}</h2>
+            <div className='nameBox'>
+                <input placeholder='Enter store name to retrieve previous count' className='inputName' onChange={(e) => handleChange(e)} />
+                <button className="startBtn" onClick={() => dispatch(decrementByAmount(value))}>
+                    ⎆
+                </button>
+            </div>
             <button className='counterBtn' onClick={() => dispatch(increment())}>➕</button>
             <button className='counterBtn' onClick={() => dispatch(decrement())}>➖</button>
             

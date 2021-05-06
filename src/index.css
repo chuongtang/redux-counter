@@ -26,8 +26,8 @@ h5{
   color: whitesmoke;
   text-align: center;
   border-radius: 20px;
-  box-shadow:  -22px -22px 44px #fff3f3,
-             22px 22px 44px #5b4b4b;
+  box-shadow:  -22px -22px 44px #5b4b4b,
+             22px 22px 44px #fff3f3;
   max-width: 70%;
   padding: 20px;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -123,4 +123,16 @@ h5{
   transition: 1s ease-in-out;
   background: #e0875d;
   color: white;
+}
+.inputName{
+  border-radius: 10px;
+  font-size: 1em;
+  width: 40vw;
+  height: 4vh;
+  text-align: center;
+}
+.startBtn{
+  background: transparent;
+  font-size: 5vh;
+  border: transparent;
 }
