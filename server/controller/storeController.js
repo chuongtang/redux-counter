@@ -1,5 +1,5 @@
 //import Store model
-import Store from './storeSchema'
+import Store from '../schema/storeSchema'
 
 
 //GET '/Store'

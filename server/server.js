@@ -2,7 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import compression from 'compression';
-import routes from './storeRoutes'
+const routes = require("./routes/storeRoutes"); 
 require('dotenv').config();
 
 const app = express();
