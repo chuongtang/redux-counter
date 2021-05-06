@@ -1,4 +1,4 @@
-//import tea model
+//import Store model
 import Store from './storeSchema'
 
 
@@ -66,7 +66,7 @@ const newCount = (req, res) => {
     let storeName = req.params.storeName; //get the Store to update Count
     let newCount = req.body.count; //get the count
     
-    //find the tea object
+    //find the STore object
     Store.findOne({storeName}, (err, data) => {
         if(err || !data || !newCount) {
             return res.json({message: "No Store found. Check name again"});
