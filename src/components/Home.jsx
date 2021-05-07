@@ -4,7 +4,7 @@ import Tilt from 'react-tilt'
 
 const Home = () => {
     return (
-        <Tilt className="Tilt" options={{ max: 25 }} style={{ height: 200, width: 1800, }} >
+        <Tilt className="Tilt" options={{ max: 15 }} style={{ height: 250, width: 1200, }} >
             <div className="App" id='homepg'>
                 <h1 style={{ 'textalign': 'center' }}>Project Detail (what I learned and used in building this)</h1>
                 <h3>🏡Home Page</h3>
