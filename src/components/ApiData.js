@@ -8,21 +8,23 @@ function StoreData() {
 
   useEffect(() => {
     const getStore = async () => {
-      let res = await fetch("/stores")
-      let data = await res.json();
-      console.log(data);
-      setStores(data);
-    };
+      try {
+        const reponse = await fetch("/stores");
+        const data = await reponse.json();
+        console.log(data);
+        setStores(data);
+      } catch (error) {
+        console.log(error.message);
+      }
+    }
     getStore();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
+  }, [])
   return (
     <div className="ApiData">
       <h3>Store info from database</h3>
       {
         stores.map(store => (
-
           <div key="apiStore">
             <h4>{store.storeName}</h4>
             <h4>{store.count}</h4>

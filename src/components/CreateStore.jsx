@@ -25,7 +25,15 @@ function CreateStore () {
             storeName: input.storeName,
             count: input.count  
         }
+        console.log(newStore);
         axios.post('/create', newStore)
+        // fetch('/stores', {
+        //     method: 'POST',
+        //     headers: {'Content-Type': 'application/json'},
+        //     body: JSON.stringify(newStore)
+        // }).then(() => {
+        //     console.log('new store added');
+        // })
     }
 
     return <div className="App">
@@ -37,7 +45,7 @@ function CreateStore () {
             <div className="form-group">
                 <input onChange={handleChange} name='count' value={input.count} autoComplete='off' className='inputName' placeholder='Counter start at'/>
             </div>
-            <button type="submit" onClick={()=> handleClick()  } className="btn btn-primary">Submit</button>
+            <button type="submit" onClick={handleClick} className="btn btn-primary">Submit</button>
         </form>
         <StoreData />
     </div>
