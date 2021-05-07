@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import axios from 'axios';
+import StoreData from './ApiData'
 
 
 function CreateStore () {
@@ -24,7 +25,7 @@ function CreateStore () {
             storeName: input.storeName,
             count: input.count  
         }
-        axios.post('http://localhost:5000/create', newStore)
+        axios.post('/create', newStore)
     }
 
     return <div className="App">
@@ -38,6 +39,7 @@ function CreateStore () {
             </div>
             <button type="submit" onClick={()=> handleClick()  } className="btn btn-primary">Submit</button>
         </form>
+        <StoreData />
     </div>
 
 }
