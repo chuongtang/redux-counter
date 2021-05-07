@@ -1,38 +1,37 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 
-function ApiData() {
-    const [data, setData] = useState(null);
-  
-    useEffect(() => {
-      fetch("http://localhost:5000/stores")
-        .then((res) => res.json())
-        .then((data) => setData(data.count))
-        console.log(data);
+function StoreData() {
+  const [stores, setStores] = useState([{
+    storeName: '',
+    count: ''
+  }])
+
+  useEffect(() => {
+    fetch("/stores")
+      .then(res => {
+        if (res.ok) {
+          return res.json()
+        }
+      })
+      .then(jsonRes => setStores(jsonRes))
+    
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
-  
-    return (
-      <div className="ApiData">
-                  <p>{!data ? "Loading..." : data.message}</p>
-        
-      </div>
-    );
-  }
+  }, []);
 
-  // function PostData (){
-  //   useEffect(() => {
-  //     // POST request using fetch inside useEffect React hook
-  //     const requestOptions = {
-  //         method: 'POST',
-  //         headers: { 'Content-Type': 'application/json' },
-  //         body: JSON.stringify({ storeName: 'NumberOneStore' })
-  //     };
-  //     fetch('http://localhost:5000/stores', requestOptions)
-  //         .then(response => response.json())
-  //         .then(data => setPostId(data.id));
+  return (
+    <div className="ApiData">
+      <h3>Store info from database</h3>
+      {
+        stores.map(store =>
+        <div>
+          <h4>{store.storeName}</h4>
+          <h4>{store.count}</h4>
+          </div>
+        )
+      }
 
-  //   // empty dependency array means this effect will only run once (like componentDidMount in classes)
-  //   }, []);
-  // }
-  
-  export default ApiData;
+    </div>
+  );
+}
+
+export default StoreData;
