@@ -13,6 +13,7 @@ const Home = () => {
                 <ul>
                     <li>Home page use React-router to render different components.</li>
                     <li>Pure CSS styling is in index.css.</li>
+                    <li>React-Tilt for the tilting animation</li>
                 </ul>
                 <h3>🏪 Create Store</h3>
                 <ul>
