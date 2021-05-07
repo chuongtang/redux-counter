@@ -1,14 +1,26 @@
 
-import Counter from './features/Counter';
-
-import CreateStore from './features/CreateStore';
+import Counter from './components/Counter';
+import CreateStore from './components/CreateStore';
+import Navbar from './components/Navbar';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Home from './components/Home';
 
 function App() {
   return (
-    <div className="App">
-      <Counter />
-      <CreateStore />
-    </div>
+    // <div >
+      <Router>
+        <Navbar />
+        <Route path='/' exact>
+          <Home />
+        </Route>
+        <Route path='/create'>
+          <CreateStore />
+        </Route>
+        <Route path='/counter'>
+          <Counter />
+        </Route>
+      </Router>
+    // </div>
   );
 }
 

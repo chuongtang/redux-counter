@@ -27,7 +27,7 @@ function CreateStore () {
         axios.post('http://localhost:5000/stores', newStore)
     }
 
-    return <div className="container">
+    return <div className="App">
         <h1>Create Store data</h1>
         <form>
             <div className="form-group">
