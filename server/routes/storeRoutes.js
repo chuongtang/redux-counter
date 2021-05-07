@@ -17,7 +17,7 @@ const Store = require('../schema/storeSchema');
 // Get all Stores
 router.get('/stores', async (req, res, next) => {
     let data = await Store.find({});
-    console.info(`Store exist in MongooseDB:`, data?.length)
+    console.info(`Store exist in MongoDB:`, data?.length)
     res.send(data);
   });
 
