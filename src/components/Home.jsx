@@ -1,7 +1,11 @@
 import React from 'react';
 import StoreData from './ApiData'
+import Tilt from 'react-tilt'
+
+
 const Home = () => {
     return (
+        <Tilt className="Tilt" options={{ max : 25 }} style={{ height: 200, width: 1800, }} >
         <div className="App" id='homepg'>
             <h1 style={{ 'text-align': 'center' }}>Project Detail</h1>
             <h3>🏡Home Page</h3>
@@ -9,7 +13,6 @@ const Home = () => {
                 <ul>
                     <li>Home page use React-router to render different components.</li>
                     <li>Pure CSS styling is in index.css.</li>
-
                 </ul>
                 <h3>🏪 Create Store</h3>
                 <ul>
@@ -25,6 +28,7 @@ const Home = () => {
             </p>
             <StoreData />
         </div>
+        </Tilt>
     );
 }
 

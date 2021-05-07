@@ -31,10 +31,10 @@ function CreateStore () {
         <h1>Create Store data</h1>
         <form>
             <div className="form-group">
-                <input onChange={handleChange} name='storeName' value={input.storeName} autoComplete='off' className='form-control' placeholder='Enter Store Name'/>
+                <input onChange={handleChange} name='storeName' value={input.storeName} autoComplete='off' className='inputName' placeholder='Enter Store Name'/>
             </div>
             <div className="form-group">
-                <input onChange={handleChange} name='count' value={input.count} autoComplete='off' className='form-control' placeholder='Counter start at'/>
+                <input onChange={handleChange} name='count' value={input.count} autoComplete='off' className='inputName' placeholder='Counter start at'/>
             </div>
             <button type="submit" onClick={()=> handleClick()  } className="btn btn-primary">Submit</button>
         </form>

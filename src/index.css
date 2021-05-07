@@ -130,6 +130,7 @@ h5{
   width: 40vw;
   height: 4vh;
   text-align: center;
+  margin-bottom: 2rem;
 }
 .startBtn{
   background: transparent;
