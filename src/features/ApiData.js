@@ -13,7 +13,7 @@ function ApiData() {
   
     return (
       <div className="ApiData">
-                  <p>{!data ? "Loading..." : data}</p>
+                  <p>{!data ? "Loading..." : data.message}</p>
         
       </div>
     );

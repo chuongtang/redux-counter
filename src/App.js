@@ -1,12 +1,13 @@
 
 import Counter from './features/Counter';
-import ApiData from './features/ApiData';
+
+import CreateStore from './features/CreateStore';
 
 function App() {
   return (
     <div className="App">
       <Counter />
-      <ApiData />
+      <CreateStore />
     </div>
   );
 }
