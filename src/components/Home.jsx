@@ -6,7 +6,7 @@ const Home = () => {
     return (
         <Tilt className="Tilt" options={{ max: 15 }} style={{ height: 250, width: 1200, }} >
             <div className="App" id='homepg'>
-                <h1 style={{ 'textalign': 'center' }}>Project Detail (what I learned and used in building this)</h1>
+                <h2 style={{ 'textalign': 'center' }}>Project Detail 📚(what I have learned and used in building this)</h2>
                 <h3>🏡Home Page</h3>
                 <ul>
                     <li>Home page use React-router to render different components.</li>

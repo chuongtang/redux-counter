@@ -22,7 +22,6 @@ function StoreData() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   return (
-    
     <div className="ApiData">
     <hr></hr>
       <h2>⮋  Data from MongoDB Atlas  ⮋</h2>
