@@ -6,14 +6,12 @@ const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
-app.use('/', routes); //to use the routes
+app.use(express.json());
 app.use(compression()); //Compress all routes
 app.use(cors());
-app.use(express.json());
+app.use('/', routes); //to use the routes
 
-const listener = app.listen(process.env.PORT || 5000, () => {
-  console.log(`HEllo, your Store server App is listening on port  ${listener.address().port}`)
-})
+
 
 //establish connection to database
 mongoose.connect(
@@ -40,3 +38,7 @@ mongoose.connect(
       );
     }
   );
+
+  const listener = app.listen(process.env.PORT || 5000, () => {
+    console.log(`HEllo, your Store server App is listening on port  ${listener.address().port}`)
+  })

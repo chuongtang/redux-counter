@@ -3,6 +3,7 @@ import axios from 'axios';
 import StoreData from './ApiData'
 
 
+
 function CreateStore () {
     const [input, setInput] = useState({
         storeName: '',
