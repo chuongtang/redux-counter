@@ -24,12 +24,18 @@ function StoreData() {
     <div className="ApiData">
       <h3>Store info from database</h3>
       {
-        stores.map(store => (
-          <div key="apiStore">
-            <h4>{store.storeName}</h4>
-            <h4>{store.count}</h4>
-          </div>
-        ))
+        
+        <table>
+            <tr><th>Store Name</th><th>Previous Count</th></tr>
+            {stores.map((store) => {
+                return (
+                  <tr key={store.name}>
+                      <td>{store.storeName}</td>
+                      <td>{store.count}</td>
+                  </tr>
+                )
+            })}                
+        </table>
       }
 
     </div>
