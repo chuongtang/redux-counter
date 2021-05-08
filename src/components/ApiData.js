@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
+
 function StoreData() {
   const [stores, setStores] = useState([{
     storeName: '',
@@ -21,17 +22,19 @@ function StoreData() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   return (
+    
     <div className="ApiData">
-      <h3>Store info from database</h3>
-      {
-        
-        <table>
-            <tr><th>Store Name</th><th>Previous Count</th></tr>
+    <hr></hr>
+      <h2>⮋  Data from MongoDB Atlas  ⮋</h2>
+     {
+        <table style={{'fontSize':'20px'}}>
+            <tr className="datatable" style={{'fontSize':'25px'}}><th>Store</th><th>Count</th></tr>
             {stores.map((store) => {
                 return (
-                  <tr key={store.name}>
-                      <td>{store.storeName}</td>
-                      <td>{store.count}</td>
+                  <tr className="datatable" key={store.name}>
+                      <td className="datatable">{store.storeName}</td>
+                      <td className="datatable">{store.count}</td>
+                      <td className="delTab">🗑️</td>
                   </tr>
                 )
             })}                

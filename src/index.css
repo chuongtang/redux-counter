@@ -166,3 +166,19 @@ h5{
   text-align: left;
   margin-left: 20vw;
 }
+
+.datatable{
+  border-image: linear-gradient(10deg, rgb(0,143,104), rgb(228, 211, 103)) 1;
+  border-style: dotted;
+}
+.delTab:hover{
+  transform: scale(2);
+}
+.ApiData{
+  text-align: center;
+  display: flex;
+  flex-direction:column;
+  margin: auto;
+  max-width: 50%;
+  padding-top: 2vh;
+}
