@@ -185,7 +185,7 @@ h5{
 
 .flatBtn{
   color: #fff;
-  background: rgb(53, 126, 168);
+  background-image: linear-gradient(to right, rgb(157, 206, 150) , rgb(41, 41, 136));
   font-family: 'Noto Sans', sans-serif;
   font-size: 14px;
   padding: 7px 18px 8px;
