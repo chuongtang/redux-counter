@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 
-
 function StoreData() {
   const [stores, setStores] = useState([{
     storeName: '',
@@ -26,8 +25,8 @@ function StoreData() {
     <hr></hr>
       <h2>⮋  Data from MongoDB Atlas  ⮋</h2>
      {
-        <table style={{'fontSize':'20px'}}>
-            <tr className="datatable" style={{'fontSize':'25px'}}><th>Store</th><th>Count</th></tr>
+        <table style={{'fontSize':'18px'}}>
+            <tr className="datatable" style={{'fontSize':'22px'}}><th>Store</th><th>Count</th></tr>
             {stores.map((store) => {
                 return (
                   <tr className="datatable" key={store.name}>

@@ -27,14 +27,7 @@ function CreateStore () {
             count: input.count  
         }
         console.log(newStore);
-        axios.post('/create', newStore)
-        // fetch('/stores', {
-        //     method: 'POST',
-        //     headers: {'Content-Type': 'application/json'},
-        //     body: JSON.stringify(newStore)
-        // }).then(() => {
-        //     console.log('new store added');
-        // })
+        axios.post('/create', newStore);
     }
 
     return <div className="App">
@@ -50,6 +43,6 @@ function CreateStore () {
         </form>
         <StoreData />
     </div>
-
 }
+
 export default CreateStore;

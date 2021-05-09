@@ -24,7 +24,8 @@ const Slice = createSlice({
       state.value -= action.payload
     },
     validateStore(state, action) {
-      state.storename = action.payload.value
+      // state.storename = action.payload.value
+      state.value = action.payload
     },
   },
 })
