@@ -10,9 +10,12 @@ function StoreData() {
     const getStore = async () => {
       try {
         const reponse = await fetch("/stores");
-        const data = await reponse.json();
+        const predata = await reponse.json();
+        const data = predata.reverse();
         console.log(data);
         setStores(data);
+        // const revStore = stores.reverse();
+        // return revStore;
       } catch (error) {
         console.log(error.message);
       }
