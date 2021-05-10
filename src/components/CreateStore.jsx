@@ -27,7 +27,8 @@ function CreateStore () {
             count: input.count  
         }
         console.log(newStore);
-        axios.post('/create', newStore);
+        axios.post('/stores', newStore);
+        alert('StoreName and Count added to database 🚀. \nGo to "Counter" to retrieve count number and start counting');
     }
 
     return <div className="App">

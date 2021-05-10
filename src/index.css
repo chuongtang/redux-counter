@@ -173,6 +173,7 @@ h5{
 }
 .delTab:hover{
   transform: scale(2);
+  cursor: pointer;
 }
 .ApiData{
   text-align: center;
