@@ -30,7 +30,7 @@ function CreateStore () {
         }
         console.log(newStore);
         axios.post('/stores', newStore);
-        alert('StoreName and Count added to database 🚀. \nGo to "Counter" to retrieve count number and start counting');
+        // alert('StoreName and Count added to database 🚀. \nGo to "Counter" to retrieve count number and start counting');
         history.push('/');
         history.go(-1);
     }

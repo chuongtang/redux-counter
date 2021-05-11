@@ -16,7 +16,7 @@ function StoreData() {
         const reponse = await fetch("/stores");
         const predata = await reponse.json();
         const data = predata.reverse();
-        // console.log(data);
+        console.log(data);
         setStores(data);
         // const revStore = stores.reverse();
         // return revStore;
@@ -31,20 +31,11 @@ function StoreData() {
     // e.preventDefault();
     const delUrl = "/stores/"+strName;
     console.log(delUrl);
-    await axios.delete(delUrl, { params: { storeName: strName } })
+    await axios.delete(delUrl, { params: { id: strName } })
     .then(response => {
       console.log(response);
-  //   try {
-  //     await fetch(delUrl, {
-  //       method: 'Delete',
-  //       data: {storeName:strName}
-  //     })
-  //     .then(() => {
-  //       history.push('/');
-  //     })
-  //   } catch (error) {
-  //   console.error('Error when trying to delete!', error);
-  // }
+      history.push('/');
+      history.go(-1);
   })}
   return (
     <div className="ApiData">
@@ -60,7 +51,7 @@ function StoreData() {
               <tbody className="datatable" key={store.name}>
                 <td className="datatable" >{store.storeName}</td>
                 <td className="datatable">{store.count}</td>
-                <td className="delTab" onClick={()=>{handleDelete(store.storeName)}}>🗑️</td>
+                <td className="delTab" onClick={()=>{handleDelete(store._id)}}>🗑️</td>
               </tbody>
             )
           })}
