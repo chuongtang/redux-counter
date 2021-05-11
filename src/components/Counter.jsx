@@ -8,6 +8,7 @@ import {
     selectCount,
     validateStore
 } from "./counterSlide.js";
+import axios from 'axios';
 
 const Counter = () => {
     const count = useSelector(selectCount);
@@ -22,7 +23,21 @@ const Counter = () => {
     const handleStoreName = (e) => {
         // const inputName = e.target.value;
         setStoreName(e.target.value);
-        
+    };
+    const retCountByName = async (strName) =>{
+        console.log(strName);
+        const findUrl = '/'+strName;
+        await axios.get(findUrl, {
+            params: {
+              storeName: strName
+            }
+          })
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          }); 
     };
 
     return (
@@ -30,7 +45,7 @@ const Counter = () => {
             <h1 className='appName'>{storeName}</h1>
             <div className='nameBox'>
                 <input type='text' placeholder='Enter store name' className='inputName' onChange={(e) => handleStoreName(e)} />
-                <br></br><button className="flatBtn" onClick={() => dispatch(validateStore(value))}>
+                <br></br><button className="flatBtn" onClick={() => retCountByName(storeName)}>
                     Click to retrieve previous count
                 </button>
             </div>
