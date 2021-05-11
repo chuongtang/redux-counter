@@ -1,10 +1,12 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 import StoreData from './ApiData'
+import { useHistory } from "react-router-dom";
 
 
 
 function CreateStore () {
+    const history = useHistory();
     const [input, setInput] = useState({
         storeName: '',
         count: ''
@@ -29,6 +31,8 @@ function CreateStore () {
         console.log(newStore);
         axios.post('/stores', newStore);
         alert('StoreName and Count added to database 🚀. \nGo to "Counter" to retrieve count number and start counting');
+        history.go(-1);
+        history.go(-1);
     }
 
     return <div className="App">

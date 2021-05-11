@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+// import {getStore} from './AxiosMethods';
 
 
 // populate the core of our Redux logic in Slice
@@ -25,7 +26,7 @@ const Slice = createSlice({
     },
     validateStore(state, action) {
       // state.storename = action.payload.value
-      state.value = action.payload
+      state.value = +2
     },
   },
 })

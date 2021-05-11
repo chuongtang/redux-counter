@@ -29,7 +29,7 @@ const Counter = () => {
         <div className='container App' >
             <h1 className='appName'>{storeName}</h1>
             <div className='nameBox'>
-                <input placeholder='Enter store name' className='inputName' onChange={(e) => handleStoreName(e)} />
+                <input type='text' placeholder='Enter store name' className='inputName' onChange={(e) => handleStoreName(e)} />
                 <br></br><button className="flatBtn" onClick={() => dispatch(validateStore(value))}>
                     Click to retrieve previous count
                 </button>

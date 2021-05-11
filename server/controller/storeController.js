@@ -22,8 +22,7 @@ const newStore = async (req, res) => {
                 storeName: req.body.storeName,
                 count: req.body.count,
             })
-
-            // save this object to database
+        // save this object to database
             newStore.save((err, data) => {
                 if (err) return res.json({ Error: err });
                 return res.json(data);
