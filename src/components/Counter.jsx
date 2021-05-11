@@ -33,8 +33,8 @@ const Counter = () => {
             }
           })
           .then(function (response) {
-            console.log(response);
-            setValue(response.count)
+            console.log(response.data.count);
+            setValue(response.data.count)
           })
           .catch(function (error) {
             console.log(error);
