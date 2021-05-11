@@ -26,7 +26,7 @@ const Counter = () => {
     };
     const retCountByName = async (strName) =>{
         console.log(strName);
-        const findUrl = '/'+strName;
+        const findUrl = '/stores/'+strName;
         await axios.get(findUrl, {
             params: {
               storeName: strName
@@ -34,6 +34,7 @@ const Counter = () => {
           })
           .then(function (response) {
             console.log(response);
+            setValue(response.count)
           })
           .catch(function (error) {
             console.log(error);

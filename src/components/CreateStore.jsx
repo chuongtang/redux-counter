@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import axios from 'axios';
-import StoreData from './ApiData'
+import StoreData from './StoreData'
 import { useHistory } from "react-router-dom";
 
 
@@ -22,7 +22,7 @@ function CreateStore () {
         })
     }
 
-    async function handleClick(e) {
+     const handleClick = async(e)=>{
         e.preventDefault();
         const newStore ={
             storeName: input.storeName,

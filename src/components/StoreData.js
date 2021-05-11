@@ -44,17 +44,24 @@ function StoreData() {
       {
         <table style={{ 'fontSize': '18px' }}>
           <thead className="datatable" style={{ 'fontSize': '22px' }}>
+            <tr>
             <th>Store</th><th>Count</th>
+
+            </tr>
+            
           </thead>
+              <tbody className="datatable" >
           {stores.map((store) => {
             return (
-              <tbody className="datatable" key={store.name}>
+              <tr key={store.id}>
                 <td className="datatable" >{store.storeName}</td>
                 <td className="datatable">{store.count}</td>
                 <td className="delTab" onClick={()=>{handleDelete(store._id)}}>🗑️</td>
-              </tbody>
+
+              </tr>
             )
           })}
+              </tbody>
         </table>
       }
     </div>
