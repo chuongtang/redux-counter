@@ -1,21 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useHistory } from "react-router-dom";
 
-const handleDelete = async(str) => {
-  // e.preventDefault();
-try {
-    await axios.delete("/stores/:storeName", { data: {storeName: str}})
-    .then(res => console.log('Delete successful'))
-  } catch (error) {
-    console.error('There was an error!', error);
-  }
-}
 
 function StoreData() {
   const [stores, setStores] = useState([{
     storeName: '',
     count: ''
   }])
+  const history = useHistory();
+
   useEffect(() => {
     const getStore = async () => {
       try {
@@ -33,24 +26,39 @@ function StoreData() {
     getStore();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+  const handleDelete = async (strName) => {
+    // e.preventDefault();
+    console.log(strName);
+    try {
+      await fetch('/stores', {
+        method: 'DELETE',
+        data: {storeName:strName}
+      })
+      .then(() => {
+        history.push('/');
+      })
+    } catch (error) {
+    console.error('Error when trying to delete!', error);
+  }
+  }
   return (
     <div className="ApiData">
-    <hr></hr>
+      <hr></hr>
       <h2>⮋  Data from MongoDB Atlas  ⮋</h2>
-     {
-        <table style={{'fontSize':'18px'}}>
-            <thead className="datatable" style={{'fontSize':'22px'}}>
+      {
+        <table style={{ 'fontSize': '18px' }}>
+          <thead className="datatable" style={{ 'fontSize': '22px' }}>
             <th>Store</th><th>Count</th>
-            </thead>
-            {stores.map((store) => {
-                return (
-                  <tbody className="datatable" key={store.name}>
-                      <td className="datatable" >{store.storeName}</td>
-                      <td className="datatable">{store.count}</td>
-                      <td className="delTab" onClick={()=>{handleDelete(store.storeName)}}>🗑️</td>
-                  </tbody>
-                )
-            })}                
+          </thead>
+          {stores.map((store) => {
+            return (
+              <tbody className="datatable" key={store.name}>
+                <td className="datatable" >{store.storeName}</td>
+                <td className="datatable">{store.count}</td>
+                <td className="delTab" onClick={()=>{handleDelete(store.storeName)}}>🗑️</td>
+              </tbody>
+            )
+          })}
         </table>
       }
     </div>
