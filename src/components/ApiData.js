@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from "react-router-dom";
+import axios from 'axios';
 
 
 function StoreData() {
@@ -28,19 +29,23 @@ function StoreData() {
   }, [])
   const handleDelete = async (strName) => {
     // e.preventDefault();
-    console.log(strName);
-    try {
-      await fetch('/stores', {
-        method: 'DELETE',
-        data: {storeName:strName}
-      })
-      .then(() => {
-        history.push('/');
-      })
-    } catch (error) {
-    console.error('Error when trying to delete!', error);
-  }
-  }
+    const delUrl = "/stores/"+strName;
+    console.log(delUrl);
+    await axios.delete(delUrl, { params: { storeName: strName } })
+    .then(response => {
+      console.log(response);
+  //   try {
+  //     await fetch(delUrl, {
+  //       method: 'Delete',
+  //       data: {storeName:strName}
+  //     })
+  //     .then(() => {
+  //       history.push('/');
+  //     })
+  //   } catch (error) {
+  //   console.error('Error when trying to delete!', error);
+  // }
+  })}
   return (
     <div className="ApiData">
       <hr></hr>

@@ -34,12 +34,16 @@ const newStore = async (req, res) => {
         }
     })
 };
+//  Delete one store
+const deleteOne = (req, res, next) => {
+    Store.findByIdAndRemove({_id: req.params.id})
+        .then(store =>{
+            res.send(store)
+        })
+        
+        .catch (next) ;
+    }
 
-const deleteOne = async (req, res) => {
-    await Store.deleteOne({ storename: req.params.storeName }, function (err) {
-        if (err) console.log(err);
-    })
-};
 //DELETE '/store'
 const deleteAllStore = (req, res) => {
     Store.deleteMany({}, err => {

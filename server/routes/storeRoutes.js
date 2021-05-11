@@ -9,7 +9,7 @@ const storeController = require('../controller/storeController');
 router.get('/stores', storeController.getAllStore);
 router.delete('/stores', storeController.deleteAllStore);
 router.post('/stores', storeController.newStore);
-router.delete('/stores', storeController.deleteOne);
+router.delete('/stores/:id', storeController.deleteOne);
 router.get('/stores/:storeName', storeController.getOneStore);
 router.post('/stores/:storeName', storeController.newCount);
 
