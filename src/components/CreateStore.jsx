@@ -22,17 +22,17 @@ function CreateStore () {
         })
     }
 
-    function handleClick(e) {
+    async function handleClick(e) {
         e.preventDefault();
         const newStore ={
             storeName: input.storeName,
             count: input.count  
         }
         console.log(newStore);
-        axios.post('/stores', newStore);
+        await axios.post('/stores', newStore);
         // alert('StoreName and Count added to database 🚀. \nGo to "Counter" to retrieve count number and start counting');
-        history.push('/');
-        history.go(-1);
+        history.push('/loading');
+        setInterval(history.push('/create'), 5000);
     }
 
     return <div className="App">

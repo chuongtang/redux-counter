@@ -34,7 +34,7 @@ function StoreData() {
     await axios.delete(delUrl, { params: { id: strName } })
     .then(response => {
       console.log(response);
-      history.push('/');
+      history.push('/loading');
       history.go(-1);
   })}
   return (

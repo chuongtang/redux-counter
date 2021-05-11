@@ -4,6 +4,7 @@ import CreateStore from './components/CreateStore';
 import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Home from './components/Home';
+import LoadingPageCom from './components/LoadingPage';
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
         </Route>
         <Route path='/counter'>
           <Counter />
+        </Route>
+        <Route path='/loading'>
+          <LoadingPageCom />
         </Route>
       </Router>
     // </div>
