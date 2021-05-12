@@ -11,16 +11,16 @@ function App() {
     // <div >
       <Router>
         <Navbar />
-        <Route path='/' exact>
+        <Route  key='home' path='/' exact>
           <Home />
         </Route>
-        <Route path='/create'>
+        <Route  key='create' path='/create'>
           <CreateStore />
         </Route>
-        <Route path='/counter'>
+        <Route  key='counter' path='/counter'>
           <Counter />
         </Route>
-        <Route path='/loading'>
+        <Route  key='loading' path='/loading'>
           <LoadingPageCom />
         </Route>
       </Router>

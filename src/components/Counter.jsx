@@ -11,7 +11,7 @@ import {
 import axios from 'axios';
 
 const Counter = () => {
-    const count = useSelector(selectCount);
+    let count = useSelector(selectCount);
     const dispatch = useDispatch();
     const [value, setValue] = useState(1);
     const [storeName, setStoreName] = useState('⮮');
@@ -24,23 +24,31 @@ const Counter = () => {
         // const inputName = e.target.value;
         setStoreName(e.target.value);
     };
-    const retCountByName = async (strName) =>{
+    const retCountByName = async (strName) => {
         console.log(strName);
-        const findUrl = '/stores/'+strName;
-        await axios.get(findUrl, {
+        const findUrl = '/stores/' + strName;
+        let ApiCount = await axios.get(findUrl, {
             params: {
-              storeName: strName
+                storeName: strName
             }
-          })
-          .then(function (response) {
-            console.log(response.data.count);
-            setValue(response.data.count)
-          })
-          .catch(function (error) {
-            console.log(error);
-          }); 
-    };
-
+        })
+            .then(function (response) {
+                if(!response) {
+                    alert('Store not found. Name is case sensitive🔍. Please try again');
+                } else {
+                const strCount = response.data.count
+                console.log(strCount);
+                return strCount;
+                // count = strCount;
+            }
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+            console.log(ApiCount);
+            setValue(ApiCount);
+        };
+        // console.log(retCountByName());
     return (
         <div className='container App' >
             <h1 className='appName'>{storeName}</h1>
@@ -50,16 +58,16 @@ const Counter = () => {
                     Click to retrieve previous count
                 </button>
             </div>
-            <h2 className="count">Count: {count}</h2>
-                <button className="flatBtn" onClick={() => dispatch(validateStore(value))}>
-                    click to save count to database
+            <h2 className="count">Count: {count + value}</h2>
+            <button className="flatBtn" onClick={() => dispatch(validateStore(value))}>
+                click to save count to database
                 </button><br></br>
             <button className='counterBtn' onClick={() => dispatch(increment())}>➕</button>
             <button className='counterBtn' onClick={() => dispatch(decrement())}>➖</button>
-            
+
             <div className='box-btn' >
                 <button className="btn-plus btn" onClick={() => dispatch(incrementByAmount(value))}>
-                    ⟰ INCREASE by 
+                    ⟰ INCREASE by
                 </button>
                 <input placeholder='#' className='inputBox' onChange={(e) => handleChange(e)} />
             </div>
@@ -69,7 +77,7 @@ const Counter = () => {
                 </button>
                 <input placeholder='#' className='inputBox' onChange={(e) => handleChange(e)} />
             </div>
-            
+
         </div>
     );
 };

@@ -38,15 +38,14 @@ function StoreData() {
       history.go(-1);
   })}
   return (
-    <div className="ApiData">
+    <div className="ApiData" key='ApiData'>
       <hr></hr>
       <h2>⮋  Data from MongoDB Atlas  ⮋</h2>
       {
         <table style={{ 'fontSize': '18px' }}>
           <thead className="datatable" style={{ 'fontSize': '22px' }}>
-            <tr>
+            <tr  key='head'>
             <th>Store</th><th>Count</th>
-
             </tr>
             
           </thead>

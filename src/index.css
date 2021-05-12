@@ -22,14 +22,14 @@ h5{
 }
 .App{
   /* margin-top: 2%; */
-  margin-left: 15%;
+  margin: auto;
   color: whitesmoke;
   text-align: center;
-  border-radius: 20px;
+  border-radius: 3rem;
   box-shadow:  -22px -22px 44px #5b4b4b,
              22px 22px 44px #fff3f3;
   max-width: 70%;
-  padding: 20px;
+  padding: 3rem;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 #favicon{
@@ -164,7 +164,8 @@ h5{
 }
 #homepg{
   text-align: left;
-  margin-left: 20vw;
+  display: block;
+  margin-left: 22vw;
 }
 
 .datatable{

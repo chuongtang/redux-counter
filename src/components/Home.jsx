@@ -12,6 +12,7 @@ const Home = () => {
                     <li>Home page use React-router to render different components.</li>
                     <li>Pure CSS styling is in index.css.</li>
                     <li>React-Tilt for the tilting animation</li>
+                    <li>Now, try hover your cursor over this component 🌩️</li>
                 </ul>
                 <h3>🏪 Create Store</h3>
                 <ul>
