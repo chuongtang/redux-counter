@@ -32,56 +32,46 @@ const Counter = () => {
                 storeName: strName
             }
         })
-            .then((response) => {
-                if(!response.data) {
-                    alert('Store not found. Name is case sensitive🔍. Please try again');
-                } else {
+            .then(function (response) {
+                console.log(response);
                 const strCount = response.data.count
                 console.log(strCount);
-                return strCount;
-                // count = strCount;
-            }
+                if (!strCount) {
+                    alert('😢 Store not found.\nStore Name is CaSe sEnSiTive 🔍.\nPlease try again');
+                } else {
+                    setValue(strCount);
+                    alert('Previous count retrived 👍.\nClick the "CHANGE by" button to continue counting');
+                }
             })
             .catch(function (error) {
                 console.log(error);
-            });
-            console.log(ApiCount);
-            setValue(ApiCount);
-        };
-        // console.log(retCountByName());
-    return (
-        <div className='container App' >
-            <h1 className='appName'>{storeName} </h1>
-            
-            <div className='nameBox'>
-                <input type='text' placeholder='Enter store name' className='inputName' onChange={(e) => handleStoreName(e)} />
-                <br></br><button className="flatBtn" onClick={() => retCountByName(storeName)}>
-                    Click to retrieve previous count
+            })
+    };
+        return (
+            <div className='container App' >
+                <h1 className='appName'>{storeName} </h1>
+
+                <div className='nameBox'>
+                    <input type='text' placeholder='Enter store name' className='inputName' onChange={(e) => handleStoreName(e)} />
+                    <br></br><button className="flatBtn" onClick={() => retCountByName(storeName)}>
+                        Click to retrieve previous count
                 </button>
-            </div>
-            <h2 className="count">Count: {count}</h2>
-            <button className="flatBtn" onClick={() => dispatch(validateStore(value))}>
-                click to save count to database
+                </div>
+                <h2 className="count">Count: {count}</h2>
+                <button className="flatBtn" onClick={() => dispatch(validateStore(value))}>
+                    click to save count to database
                 </button><br></br>
-            <button className='counterBtn' onClick={() => dispatch(increment())}>➕</button>
-            <button className='counterBtn' onClick={() => dispatch(decrement())}>➖</button>
-
-            <div className='box-btn' >
-                <button className="btn-plus btn" onClick={() => dispatch(incrementByAmount(value))}>
-                     🎢CHANGE by ⏩
+                <button className='counterBtn' onClick={() => dispatch(increment())}>➕</button>
+                <button className='counterBtn' onClick={() => dispatch(decrement())}>➖</button>
+                <div className='box-btn' >
+                    <button className="btn-plus btn" onClick={() => dispatch(incrementByAmount(value))}>
+                        🎢CHANGE by ⏩
                 </button>
-                <input placeholder={value} className='inputBox' onChange={(e) => handleChange(e)} />
-                <p>(enter negative number for subtraction)</p>
+                    <input placeholder={value} className='inputBox' onChange={(e) => handleChange(e)} />
+                    <p>(enter negative number for subtraction)</p>
+                </div>
             </div>
-            {/* <div className='box-btn'>
-                <button className="btn-minus btn" onClick={() => dispatch(decrementByAmount(value))}>
-                    ⟱ DECREASE by
-                </button>
-                <input placeholder='#' className='inputBox' onChange={(e) => handleChange(e)} />
-            </div> */}
+        );
+    };
 
-        </div>
-    );
-};
-
-export default Counter;
+    export default Counter;
