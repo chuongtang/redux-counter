@@ -77,7 +77,6 @@ const newCount = (req, res) => {
         if (err || !data || !newCount) {
             console.log('errorIS',err);
             console.log('dataIS', data);
-            // console.log(newCount);
             return res.json({ message: "No Store found. Check name again" });
         }
         else {
