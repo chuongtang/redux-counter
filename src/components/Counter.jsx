@@ -4,9 +4,7 @@ import {
     increment,
     decrement,
     incrementByAmount,
-    // decrementByAmount,
     selectCount,
-    // validateStore
 } from "./counterSlide.js";
 import axios from 'axios';
 
@@ -21,7 +19,6 @@ const Counter = () => {
         setValue(num);
     };
     const handleStoreName = (e) => {
-        // const inputName = e.target.value;
         setStoreName(e.target.value);
     };
     const retCountByName = async (strName) => {
@@ -40,7 +37,7 @@ const Counter = () => {
                     alert('😢 Store not found.\nStore Name is CaSe sEnSiTive 🔍.\nPlease try again');
                 } else {
                     setValue(strCount);
-                    alert('Previous count retrived 👍.\nClick the "CHANGE by" button to continue counting');
+                    alert('Previous count retrived 👍.\nClick the "CHANGE by ⏩" button to continue counting');
                 }
             })
             .catch(function (error) {
@@ -51,16 +48,15 @@ const Counter = () => {
         await axios.put('/stores', { storeName, count })
         .then(function (response) {
             console.log(response);
+            alert(`New count updated for ${storeName}`)
         })
         .catch(function (error) {
             console.log(error);
         })
-        
     }
     return (
         <div className='container App' >
             <h1 className='appName'>{storeName} </h1>
-
             <div className='nameBox'>
                 <input type='text' placeholder='Enter store name' className='inputName' onChange={(e) => handleStoreName(e)} />
                 <br></br><button className="flatBtn" onClick={() => retCountByName(storeName)}>

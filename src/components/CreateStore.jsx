@@ -3,8 +3,6 @@ import axios from 'axios';
 import StoreData from './StoreData'
 import { useHistory } from "react-router-dom";
 
-
-
 function CreateStore () {
     const history = useHistory();
     const [input, setInput] = useState({
@@ -13,7 +11,6 @@ function CreateStore () {
     })
     function handleChange(e){
         const {name, value}= e.target;
-
         setInput(prevInput => {
             return {
                 ...prevInput,
@@ -30,7 +27,7 @@ function CreateStore () {
         }
         console.log(newStore);
         await axios.post('/stores', newStore);
-        // alert('StoreName and Count added to database 🚀. \nGo to "Counter" to retrieve count number and start counting');
+        alert('StoreName and Count added to database 🚀. \nGo to "Counter" to retrieve count number and start counting');
         history.push('/loading');
         setInterval(history.push('/create'), 5000);
     }
@@ -39,12 +36,12 @@ function CreateStore () {
         <h1>Create Store data</h1>
         <form>
             <div className="form-group">
-                <input onChange={handleChange} name='storeName' value={input.storeName} autoComplete='off' className='inputName' placeholder='Enter Store Name'/>
+                <input onChange={handleChange} name='storeName' value={input.storeName} autoComplete='off' className='inputName' placeholder='Enter Store Name (no space)'/>
             </div>
             <div className="form-group">
                 <input onChange={handleChange} name='count' value={input.count} autoComplete='off' className='inputName' placeholder='Counter start at'/>
             </div>
-            <button type="submit" onClick={handleClick} className="btn btn-primary">Submit</button>
+            <button type="submit" onClick={handleClick} className="btn btn-primary">Send to Database 🚀</button>
         </form>
         <StoreData />
     </div>

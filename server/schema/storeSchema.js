@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 // Store schema
 const StoreSchema = new mongoose.Schema({
-    storeName: {type:String, required:true},
+    storeName: {type:String, required:true, unique:true},
     count: Number    
 });
 
