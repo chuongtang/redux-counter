@@ -4,7 +4,7 @@ import {
     increment,
     decrement,
     incrementByAmount,
-    decrementByAmount,
+    // decrementByAmount,
     selectCount,
     validateStore
 } from "./counterSlide.js";
@@ -32,8 +32,8 @@ const Counter = () => {
                 storeName: strName
             }
         })
-            .then(function (response) {
-                if(!response) {
+            .then((response) => {
+                if(!response.data) {
                     alert('Store not found. Name is case sensitive🔍. Please try again');
                 } else {
                 const strCount = response.data.count
@@ -51,14 +51,15 @@ const Counter = () => {
         // console.log(retCountByName());
     return (
         <div className='container App' >
-            <h1 className='appName'>{storeName}</h1>
+            <h1 className='appName'>{storeName} </h1>
+            
             <div className='nameBox'>
                 <input type='text' placeholder='Enter store name' className='inputName' onChange={(e) => handleStoreName(e)} />
                 <br></br><button className="flatBtn" onClick={() => retCountByName(storeName)}>
                     Click to retrieve previous count
                 </button>
             </div>
-            <h2 className="count">Count: {count + value}</h2>
+            <h2 className="count">Count: {count}</h2>
             <button className="flatBtn" onClick={() => dispatch(validateStore(value))}>
                 click to save count to database
                 </button><br></br>
@@ -67,16 +68,17 @@ const Counter = () => {
 
             <div className='box-btn' >
                 <button className="btn-plus btn" onClick={() => dispatch(incrementByAmount(value))}>
-                    ⟰ INCREASE by
+                     🎢CHANGE by ⏩
                 </button>
-                <input placeholder='#' className='inputBox' onChange={(e) => handleChange(e)} />
+                <input placeholder={value} className='inputBox' onChange={(e) => handleChange(e)} />
+                <p>(enter negative number for subtraction)</p>
             </div>
-            <div className='box-btn'>
+            {/* <div className='box-btn'>
                 <button className="btn-minus btn" onClick={() => dispatch(decrementByAmount(value))}>
                     ⟱ DECREASE by
                 </button>
                 <input placeholder='#' className='inputBox' onChange={(e) => handleChange(e)} />
-            </div>
+            </div> */}
 
         </div>
     );
