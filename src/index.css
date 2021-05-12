@@ -98,10 +98,10 @@ h5{
   100% { background-position: 0 0; }
 }
 .inputBox{
-  max-width: 2em;
+  max-width: 4em;
   font-size: large;
-  height: 2rem;
-  border-radius: 10px;
+  height: 2.5rem;
+  border-radius: 1rem;
   text-align: center;
 }
 
@@ -182,7 +182,7 @@ h5{
   flex-direction:column;
   margin: auto;
   max-width: 50%;
-  padding-top: 2vh;
+  padding-top: 3vh;
 }
 
 .flatBtn{
@@ -194,6 +194,7 @@ h5{
   border-radius: 20px;
   border: none;
   overflow: hidden;
+  margin-bottom: 4vh;
   position: relative;
   z-index: 1;
   transition: all 0.3s ease 0s;
