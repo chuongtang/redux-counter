@@ -37,7 +37,7 @@ const Counter = () => {
                     alert('😢 Store not found.\nStore Name is CaSe sEnSiTive 🔍.\nPlease try again');
                 } else {
                     setValue(strCount);
-                    alert('Previous count retrived 👍.\nClick the "CHANGE by ⏩" button to continue counting');
+                    alert(`${strName}'s previous count retrived 👍.\nClick the "CHANGE by ⏩" button to continue counting`);
                 }
             })
             .catch(function (error) {

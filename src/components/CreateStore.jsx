@@ -27,7 +27,7 @@ function CreateStore () {
         }
         console.log(newStore);
         await axios.post('/stores', newStore);
-        alert('StoreName and Count added to database 🚀. \nGo to "Counter" to retrieve count number and start counting');
+        alert(`${newStore.storeName} with ${newStore.count}Counts has been added to database 🚀. \nGo to "Counter" to retrieve count number and start counting`);
         history.push('/loading');
         setInterval(history.push('/create'), 5000);
     }
@@ -36,7 +36,7 @@ function CreateStore () {
         <h1>Create Store data</h1>
         <form>
             <div className="form-group">
-                <input onChange={handleChange} name='storeName' value={input.storeName} autoComplete='off' className='inputName' placeholder='Enter Store Name (no space)'/>
+                <input onChange={handleChange} name='storeName' value={input.storeName} autoComplete='off' className='inputName' placeholder='Enter Store Name'/>
             </div>
             <div className="form-group">
                 <input onChange={handleChange} name='count' value={input.count} autoComplete='off' className='inputName' placeholder='Counter start at'/>
