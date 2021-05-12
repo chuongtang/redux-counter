@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/reactCounter/static/css/main.e7a14529.chunk.css",
+    "main.js": "/reactCounter/static/js/main.ca46e214.chunk.js",
+    "main.js.map": "/reactCounter/static/js/main.ca46e214.chunk.js.map",
+    "runtime-main.js": "/reactCounter/static/js/runtime-main.d9b23a6f.js",
+    "runtime-main.js.map": "/reactCounter/static/js/runtime-main.d9b23a6f.js.map",
+    "static/js/2.4901fb88.chunk.js": "/reactCounter/static/js/2.4901fb88.chunk.js",
+    "static/js/2.4901fb88.chunk.js.map": "/reactCounter/static/js/2.4901fb88.chunk.js.map",
+    "index.html": "/reactCounter/index.html",
+    "static/css/main.e7a14529.chunk.css.map": "/reactCounter/static/css/main.e7a14529.chunk.css.map",
+    "static/js/2.4901fb88.chunk.js.LICENSE.txt": "/reactCounter/static/js/2.4901fb88.chunk.js.LICENSE.txt",
+    "static/media/loading.fae6f7fa.svg": "/reactCounter/static/media/loading.fae6f7fa.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d9b23a6f.js",
+    "static/js/2.4901fb88.chunk.js",
+    "static/css/main.e7a14529.chunk.css",
+    "static/js/main.ca46e214.chunk.js"
+  ]
+}
