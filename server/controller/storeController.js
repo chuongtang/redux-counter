@@ -69,17 +69,21 @@ const getOneStore = (req, res) => {
 
 //Update Store Count
 const newCount = (req, res) => {
-    let storeName = req.params.storeName; //get the Store to update Count
+    let storeName = req.body.storeName; //get the Store to update Count
     let newCount = req.body.count; //get the count
 
     //find the STore object
     Store.findOne({ storeName }, (err, data) => {
         if (err || !data || !newCount) {
+            console.log('errorIS',err);
+            console.log('dataIS', data);
+            // console.log(newCount);
             return res.json({ message: "No Store found. Check name again" });
         }
         else {
             //update NewCount to  the Store object
             data.count = newCount;
+            console.log('newupdateCount is', newCount);
             //save changes to db
             data.save(err => {
                 if (err) {
@@ -90,7 +94,6 @@ const newCount = (req, res) => {
         }
     })
 };
-
 
 //export controller functions
 module.exports = {

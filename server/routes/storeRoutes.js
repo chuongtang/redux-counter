@@ -11,7 +11,7 @@ router.delete('/stores', storeController.deleteAllStore);
 router.post('/stores', storeController.newStore);
 router.delete('/stores/:id', storeController.deleteOne);
 router.get('/stores/:storeName', storeController.getOneStore);
-router.post('/stores/:storeName', storeController.newCount);
+router.put('/stores', storeController.newCount);
 
 
 
