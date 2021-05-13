@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/c6-reactcounter/static/css/main.e7a14529.chunk.css",
+    "main.js": "/c6-reactcounter/static/js/main.32a3ffbb.chunk.js",
+    "main.js.map": "/c6-reactcounter/static/js/main.32a3ffbb.chunk.js.map",
+    "runtime-main.js": "/c6-reactcounter/static/js/runtime-main.845fef15.js",
+    "runtime-main.js.map": "/c6-reactcounter/static/js/runtime-main.845fef15.js.map",
+    "static/js/2.4901fb88.chunk.js": "/c6-reactcounter/static/js/2.4901fb88.chunk.js",
+    "static/js/2.4901fb88.chunk.js.map": "/c6-reactcounter/static/js/2.4901fb88.chunk.js.map",
+    "index.html": "/c6-reactcounter/index.html",
+    "static/css/main.e7a14529.chunk.css.map": "/c6-reactcounter/static/css/main.e7a14529.chunk.css.map",
+    "static/js/2.4901fb88.chunk.js.LICENSE.txt": "/c6-reactcounter/static/js/2.4901fb88.chunk.js.LICENSE.txt",
+    "static/media/loading.05fa5670.svg": "/c6-reactcounter/static/media/loading.05fa5670.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.845fef15.js",
+    "static/js/2.4901fb88.chunk.js",
+    "static/css/main.e7a14529.chunk.css",
+    "static/js/main.32a3ffbb.chunk.js"
+  ]
+}
