@@ -1,11 +1,19 @@
 require('dotenv').config();
 const express = require('express'); 
+const path = require('path');
 const routes = require('./routes/storeRoutes'); 
 const mongoose = require('mongoose');
 const compression = require('compression');
 const cors = require('cors');
 
 const app = express();
+
+// Add static serve for BUILD
+app.use(express.static(path.join(__dirname, 'build')));
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
 app.use(express.json());
 app.use(compression()); //Compress all routes
 app.use(cors());
