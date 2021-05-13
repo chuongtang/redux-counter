@@ -15,34 +15,33 @@ const getAllStore = (req, res) => {
 //POST '/Store'
 const newStore = async (req, res) => {
     //check if the Store name already exists in db
-    await Store.findOne({ storeName: req.body.storeName }, (data) => {
-        if (!data) {
-            //create a new Store object using the Store model and req.body
-            const newStore = new Store({
-                storeName: req.body.storeName,
-                count: req.body.count,
-            })
+    const docs = await Store.findOne({ storeName: req.body.storeName });
+    if (!docs) {
+        //create a new Store object using the Store model and req.body
+        const newStore = new Store({
+            storeName: req.body.storeName,
+            count: req.body.count,
+        })
         // save this object to database
-            newStore.save((err, data) => {
-                if (err) return res.json({ Error: err });
-                return res.json(data);
-            })
-            //if Store is in db, return a message to inform it exists            
-        } else {
-            alert('Store exist');
-            return res.json({ message: "Store already exists. Count is from previous" });
-        }
-    })
+        newStore.save((err, data) => {
+            if (err) return res.json({ Error: err });
+            return res.json(data);
+        })
+        //if Store is in db, return a message to inform it exists            
+    } else {
+        res.json({ message: "Store already exists. Count is from previous" });
+    }
 };
+
 //  Delete one store
 const deleteOne = (req, res, next) => {
-    Store.findByIdAndRemove({_id: req.params.id})
-        .then(store =>{
+    Store.findByIdAndRemove({ _id: req.params.id })
+        .then(store => {
             res.send(store)
         })
-        
-        .catch (next) ;
-    }
+
+        .catch(next);
+}
 
 //DELETE '/store'
 const deleteAllStore = (req, res) => {
@@ -75,7 +74,7 @@ const newCount = (req, res) => {
     //find the STore object
     Store.findOne({ storeName }, (err, data) => {
         if (err || !data || !newCount) {
-            console.log('errorIS',err);
+            console.log('errorIS', err);
             console.log('dataIS', data);
             return res.json({ message: "No Store found. Check name again" });
         }

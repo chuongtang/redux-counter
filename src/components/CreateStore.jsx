@@ -26,11 +26,26 @@ function CreateStore () {
             count: input.count  
         }
         console.log(newStore);
-        await axios.post('/stores', newStore);
-        alert(`${newStore.storeName} with ${newStore.count}Counts has been added to database 🚀. \nGo to "Counter" to retrieve count number and start counting`);
-        history.push('/loading');
-        setInterval(history.push('/create'), 5000);
-    }
+        await axios.post('/stores', newStore)
+        .then(response => {
+            const resFromSer = response.data.message;
+            console.log(resFromSer);
+            if(!resFromSer){
+                alert(`${newStore.storeName} with ${newStore.count}Counts has been added to database 🚀. \nGo to "Counter" to retrieve count number and start counting`);
+            } else {
+                console.log('Response from server: ', resFromSer);
+                alert (resFromSer);
+                return resFromSer;
+
+            }
+            history.push('/loading');
+            setInterval(history.push('/create'), 5000);
+        })
+        .catch(error => {
+            console.error('There was an error!', error);
+        // 
+        })
+     };
 
     return <div className="App">
         <h1>Create Store data</h1>
