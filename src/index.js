@@ -8,11 +8,10 @@ import { Store } from "./app/store";
 
 // using Provider to provide our Redux store to all wrapped Components
 ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={Store}>
-      <App />
-    </Provider>
-  </React.StrictMode>,
+  // <React.StrictMode>
+  <Provider store={Store}>
+    <App />
+  </Provider>,
+  // </React.StrictMode>,
   document.getElementById('root')
 );
-
