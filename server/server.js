@@ -1,7 +1,7 @@
 require('dotenv').config();
-const express = require('express'); 
+const express = require('express');
 const path = require('path');
-const routes = require('./routes/storeRoutes'); 
+const routes = require('./routes/storeRoutes');
 const mongoose = require('mongoose');
 const compression = require('compression');
 const cors = require('cors');
@@ -24,29 +24,42 @@ app.use('/', routes); //to use the routes
 //establish connection to database
 mongoose.connect(
   process.env.MONGODB_URI,
-  { 
-      useFindAndModify: false, 
-      useUnifiedTopology: true, 
-      useNewUrlParser: true, 
-      useCreateIndex: true,
-      // // prevents heroku from returning a timeout error 503
-      // server: { 
-      //     socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } 
-      //  }, 
-      //  replset: {
-      //     socketOptions: { keepAlive: 300000, connectTimeoutMS : 30000 } 
-      //  }
-       
+  {
+    useFindAndModify: false,
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    // // prevents heroku from returning a timeout error 503
+    // server: { 
+    //     socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } 
+    //  }, 
+    //  replset: {
+    //     socketOptions: { keepAlive: 300000, connectTimeoutMS : 30000 } 
+    //  }
+
   },
   function (err) {
-      if (err) return console.log("Error: ", err);
-      console.log(
-        "MongoDB Connection -- Ready state is:",
-        mongoose.connection.readyState
-      );
-    }
-  );
+    if (err) return console.log("Error: ", err);
+    console.log(
+      "MongoDB Connection -- Ready state is:",
+      mongoose.connection.readyState
+    );
+  }
+);
 
-  const listener = app.listen(process.env.PORT || 5000, () => {
-    console.log(`HEllo, your Store server App is listening on port  ${listener.address().port}`)
+// const __dirname = path.resolve()
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '/client/build')))
+
+  app.get('*', (req, res) =>
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+  )
+} else {
+  app.get('/', (req, res) => {
+    res.send('App is running at root...')
   })
+}
+const listener = app.listen(process.env.PORT || 5000, () => {
+  console.log(`HEllo, your Store server App is listening on port  ${listener.address().port}`)
+})
